@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -8,6 +9,7 @@ public class Lobby {
 	public static void main(String[] args) {
 		int poolSize = 3;
 		int portNumber = 1337;
+		ArrayList<Gameserver> gamelist = new ArrayList<GameServer>();
 		
 		try { 							// hantera första inparametern
 			poolSize = Integer.parseInt(args[0]);
