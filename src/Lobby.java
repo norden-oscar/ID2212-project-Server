@@ -6,11 +6,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Lobby {
+	
+	
+	ArrayList<GameServer> gameList = new ArrayList<GameServer>();
+	ArrayList<Player> playerList = new ArrayList<Player>();
+
+	
 	public static void main(String[] args) {
+		
 		int poolSize = 3;
 		int portNumber = 1337;
-		ArrayList<Gameserver> gamelist = new ArrayList<GameServer>();
-		
+			
 		try { 							// hantera första inparametern
 			poolSize = Integer.parseInt(args[0]);
 		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
@@ -40,11 +46,18 @@ public class Lobby {
 			while (true) {
 				Socket clientSocket = listen.accept();
 				System.out.println("client connected");
-				executor.execute(new GameServer(clientSocket));
+				GameServer tempGame = new GameServer(this);
+				gameList.add(tempGame);
+				executor.execute(tempGame);
 			}
 		} catch (IOException ex) {
 			System.out.println("cannot listen to port :" + portNumber);
 			System.exit(1);
 		}
 	}
+	public void createGame(){
+		GameServer tempGame = new GameServer(this);
+		gameList.add(tempGame);
+	}
+	
 }
