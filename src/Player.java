@@ -41,4 +41,10 @@ public class Player {
 		losses = losses+1;
 		rank = calculateRank(wins, losses);
 	}
+	public boolean equals(String userName){
+		if(this.userName.equals(userName)){
+			return true;
+		}
+		else return false;
+	}
 }

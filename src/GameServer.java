@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class GameServer implements Runnable {
@@ -15,9 +16,11 @@ public class GameServer implements Runnable {
 	private ServerSocket serverSocket;
 	private int portNumber=0;
 	private Lobby lobby;
-
+	private String[] board = new String[9];
+	private ArrayList<Integer> player1Marks = new ArrayList<Integer>();
+	private ArrayList<Integer> player2Marks = new ArrayList<Integer>();
+	private final 
 	public GameServer(Lobby lobby) {
-		state = State.EMTPY;
 		Random rand = new Random();
 		portNumber = rand.nextInt(1000) + 3000;
 		this.lobby = lobby;
@@ -38,8 +41,28 @@ public class GameServer implements Runnable {
 		playingGame();
 
 	}
+	private void checkForWin(){	// kollar igenom efter en vinst
+		
+		
+	}
+	private void placeMarker(String marker, int position,int player){		// man får när man callar den hålla koll på vilken symbol och vilken spelare
+		board[position]=marker;
+		if(player == 1){
+			player1Marks.add(position);	// dessa håller koll på varje spelares positioner, och man kan använda
+				// ArrayList.containsAll för att kolla mot de kombinationer som betyder vinst.
+		}
+		else if(player == 2){
+			
+			player2Marks.add(position);
+		}
+	}
+	private void fillBoard(){
+		for(int i = 0;i<board.length;i++){
+			board[i]="-";
+		}
+	}
 	
-	public int getPortNumber(){
+	public int getPortNumbber(){
 		return portNumber;
 	}
 
@@ -57,6 +80,7 @@ public class GameServer implements Runnable {
 					clientSocket1 = serverSocket.accept();
 					in1 = new BufferedReader(new InputStreamReader(clientSocket1.getInputStream()));
 					out1 = new PrintWriter(clientSocket1.getOutputStream());
+					
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
