@@ -109,3 +109,21 @@
 [2016-01-04T17:32:14.216+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=72 _ThreadName=PingService] [timeMillis: 1451925134216] [levelValue: 800] [[
   Domain Pinged: release.glassfish.org]]
 
+[2016-01-04T22:59:21.681+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=176 _ThreadName=Thread-31] [timeMillis: 1451944761681] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2016-01-04T22:59:21.691+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=176 _ThreadName=Thread-31] [timeMillis: 1451944761691] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@5dcd0cdf from service registry.]]
+
+[2016-01-04T22:59:21.692+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=176 _ThreadName=Thread-8] [timeMillis: 1451944761692] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2016-01-04T22:59:21.698+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=176 _ThreadName=Thread-31] [timeMillis: 1451944761698] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2016-01-04T22:59:21.699+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=176 _ThreadName=Thread-31] [timeMillis: 1451944761699] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2016-01-04T22:59:21.791+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=182 _ThreadName=Thread-8] [timeMillis: 1451944761791] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
