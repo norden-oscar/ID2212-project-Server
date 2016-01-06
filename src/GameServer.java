@@ -249,7 +249,7 @@ public class GameServer implements Runnable {
 		boolean keepSearching = true;
 		// TODO Väntar på 2 spelare,
 		while (keepSearching) {
-			if (!(clientSocket1.isBound()) && !(clientSocket2.isBound())) {
+			//if (!(clientSocket1.isBound()) && !(clientSocket2.isBound())) {
 				try {
 					clientSocket1 = serverSocket.accept();
 					in1 = new BufferedReader(new InputStreamReader(clientSocket1.getInputStream()));
@@ -260,7 +260,7 @@ public class GameServer implements Runnable {
 					e.printStackTrace();
 				}
 				state = State.IDLE;
-			} else if (clientSocket1.isBound() && !(clientSocket2.isBound())) {
+			//} else if (clientSocket1.isBound() && !(clientSocket2.isBound())) {
 				try {
 					clientSocket2 = serverSocket.accept();
 					in2 = new BufferedReader(new InputStreamReader(clientSocket2.getInputStream()));
@@ -271,7 +271,7 @@ public class GameServer implements Runnable {
 				}
 				keepSearching = false;
 				state = State.FULL;
-			}
+			//}
 		}
 
 	}
