@@ -1,3 +1,4 @@
+<?xml version="3.0"?>
 <servlet>
 	<servlet-name>Fetch All Profiles</servlet-name>
 	<servlet-class>Servlets.FetchAllProfiles</servlet-class>
