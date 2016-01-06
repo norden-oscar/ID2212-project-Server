@@ -6,45 +6,51 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Lobby {
-	public static void main(String[] args) {
-		int poolSize = 3;
-		int portNumber = 1337;
-		ArrayList<Gameserver> gamelist = new ArrayList<GameServer>();
-		
-		try { 							// hantera första inparametern
-			poolSize = Integer.parseInt(args[0]);
-		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
-			System.out.println("using standard value for poolsize :" + poolSize);
-		} catch (java.lang.NumberFormatException nfe) {
-			System.err.println("poolsize parameter must be a number");
-			System.exit(1);
-		}
-		
-		try { 								// hantera den andra inparametern
-			portNumber = Integer.parseInt(args[1]);
-		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
-			System.out.println("using standard value for port number :" + portNumber);
-		} catch (java.lang.NumberFormatException nfe) {
-			System.err.println("Port number parameter must be a number");
-			System.exit(1);
-		}
+	
+	ArrayList<GameServer> gameList = new ArrayList<GameServer>();
+	ArrayList<Player> playerList = new ArrayList<Player>();
+	int poolSize = 3;
+	int portNumber = 1337;
+	ExecutorService executor;
+
+	public Lobby() {
+		startExecutor();
+	}
+
+	private void startExecutor() {
+		executor = Executors.newFixedThreadPool(poolSize);
+	}
+
+	public void createGame() {
+		GameServer tempGame = new GameServer(this);
+		gameList.add(tempGame);
+		executor.execute(tempGame);
 		
 		
-		
-		ExecutorService executor = Executors.newFixedThreadPool(poolSize);
-		ServerSocket listen;
-		try {
-			System.out.println("starting server with maximum " + poolSize
-					+ " threads at a time that is accepting requests on port: " + portNumber);
-			listen = new ServerSocket(portNumber);
-			while (true) {
-				Socket clientSocket = listen.accept();
-				System.out.println("client connected");
-				executor.execute(new GameServer(clientSocket));
+		// TODO Kolla upp vilken port gamet fick och skicka tillbaka det till
+		// servleten så att den kan ge portnummer till clienten, kan skicka tillbaka det genom att returna
+		//en int 
+	}
+
+	public boolean userExists(String userName) {		// kanske är onödig
+		for (int i = 0; i < playerList.size(); i++) {
+			if (playerList.get(i).equals(userName)) {
+				return true;
 			}
-		} catch (IOException ex) {
-			System.out.println("cannot listen to port :" + portNumber);
-			System.exit(1);
 		}
+		return false;
+	}
+
+	public Player getUser(String userName) {
+		for (int i = 0; i < gameList.size(); i++) {
+			if (playerList.get(i).equals(userName)) {
+				return playerList.get(i);
+			}
+		}
+		return null;
+	}
+	public String registerUser(String userName,String Password){
+		
+		
 	}
 }
