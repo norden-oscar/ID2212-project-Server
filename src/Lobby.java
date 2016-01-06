@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Lobby {
-
+	
 	ArrayList<GameServer> gameList = new ArrayList<GameServer>();
 	ArrayList<Player> playerList = new ArrayList<Player>();
 	int poolSize = 3;
@@ -48,5 +48,9 @@ public class Lobby {
 			}
 		}
 		return null;
+	}
+	public String registerUser(String userName,String Password){
+		
+		
 	}
 }
