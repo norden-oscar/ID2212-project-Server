@@ -1,3 +1,4 @@
+package Server;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,6 +19,8 @@ public class Lobby {
 	private Connection conn;
 	private PreparedStatement register;
 	private PreparedStatement fetchPlayers;
+	private PreparedStatement updateWins;
+	private PreparedStatement updateLosses;
 	private String datasource = "game_db";
 
 	public Lobby() {
@@ -26,11 +29,21 @@ public class Lobby {
 		fetchPlayers();
 		try {
 			register = conn.prepareStatement("INSERT INTO players (username, password) VALUES (?, ?)");
-
+			updateWins = conn.prepareStatement("UPDATE players" + 
+					   "SET wins=? WHERE username=?;");
+			updateLosses = conn.prepareStatement("UPDATE players" + 
+					   "SET losses=? WHERE username=?;");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public void addWin(String userName){
+		getPlayer(userName);
+		
+	}
+	public void addLoss(){
+		
 	}
 	public Player getPlayer(String userName){
 		for(int i = 0;i<registeredPlayers.size();i++){
@@ -41,6 +54,7 @@ public class Lobby {
 		}
 		return null;
 	}
+	
 	
 	public String findGame(){
 		for(int i = 0;i<gameList.size();i++){
