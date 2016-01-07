@@ -3,6 +3,9 @@ package Servlets;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Server.Lobby;
+
 import javax.servlet.ServletException;
 import java.io.IOException;
 
@@ -14,8 +17,9 @@ public class FetchProfileServlet extends HttpServlet {
 		String userName = request.getParameter("userName");
 		String remoteAddr = request.getRemoteAddr();
 
-		// TODO: send data to server
-
-		response.getWriter().write("OK");
+		Lobby lobby =Lobby.getLobby();
+		String[] result = lobby.fetchProfile(userName);
+		String resultToString = result[0]+" "+result[1]+" "+result[2];
+		response.getWriter().write(resultToString);
 	}
 }
