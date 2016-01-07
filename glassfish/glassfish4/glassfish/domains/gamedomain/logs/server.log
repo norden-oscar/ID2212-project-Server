@@ -301,3 +301,663 @@ com.sun.enterprise.admin.cli.AdminMain]]
 [2016-01-06T19:30:26.643+0100] [glassfish 4.1] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=47 _ThreadName=admin-listener(3)] [timeMillis: 1452105026643] [levelValue: 800] [[
   HV000001: Hibernate Validator 5.1.2.Final]]
 
+[2016-01-06T23:23:39.638+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=24 _ThreadName=RunLevelControllerThread-1452119019535] [timeMillis: 1452119019638] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  4.1.1  (build 1)]]
+
+[2016-01-06T23:23:39.640+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=24 _ThreadName=RunLevelControllerThread-1452119019535] [timeMillis: 1452119019640] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2016-01-06T23:23:39.756+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119019756] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-06T23:23:39.782+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119019782] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-06T23:23:39.788+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119019788] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2016-01-06T23:23:40.100+0100] [glassfish 4.1] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=25 _ThreadName=RunLevelControllerThread-1452119019540] [timeMillis: 1452119020100] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2016-01-06T23:23:40.280+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=26 _ThreadName=RunLevelControllerThread-1452119019540] [timeMillis: 1452119020280] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2016-01-06T23:23:40.337+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119020337] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-1, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:23:40.434+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119020434] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 73ms - bound to [/0.0.0.0:8080]]]
+
+[2016-01-06T23:23:40.447+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119020447] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-2, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:23:40.451+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119020451] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 2ms - bound to [/0.0.0.0:8181]]]
+
+[2016-01-06T23:23:40.453+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119020453] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=admin-listener, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:23:40.458+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=23 _ThreadName=RunLevelControllerThread-1452119019534] [timeMillis: 1452119020458] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 2ms - bound to [/0.0.0.0:4848]]]
+
+[2016-01-06T23:23:40.488+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=26 _ThreadName=RunLevelControllerThread-1452119019540] [timeMillis: 1452119020488] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 2ms - bound to [/0.0.0.0:3700]]]
+
+[2016-01-06T23:23:40.489+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452119020489] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  4.1.1  (1) startup time : Felix (3 967ms), startup services(959ms), total(4 926ms)]]
+
+[2016-01-06T23:23:40.601+0100] [glassfish 4.1] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=24 _ThreadName=RunLevelControllerThread-1452119019535] [timeMillis: 1452119020601] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2016-01-06T23:23:40.707+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=25 _ThreadName=RunLevelControllerThread-1452119019540] [timeMillis: 1452119020707] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 8ms - bound to [/0.0.0.0:7676]]]
+
+[2016-01-06T23:23:40.765+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452119020765] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@577bfadb as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@36463b09.]]
+
+[2016-01-06T23:23:40.864+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=63 _ThreadName=Thread-17] [timeMillis: 1452119020864] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://130.229.179.6:8686/jndi/rmi://130.229.179.6:8686/jmxrmi]]
+
+[2016-01-06T23:23:46.177+0100] [glassfish 4.1] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=52 _ThreadName=admin-listener(2)] [timeMillis: 1452119026177] [levelValue: 800] [[
+  HV000001: Hibernate Validator 5.1.2.Final]]
+
+[2016-01-06T23:23:47.611+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119027611] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:23:47.845+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119027845] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2016-01-06T23:23:47.845+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119027845] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2016-01-06T23:23:47.848+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119027848] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2016-01-06T23:23:47.878+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119027878] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2016-01-06T23:23:48.069+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028069] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2016-01-06T23:23:48.074+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028074] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2016-01-06T23:23:48.076+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028076] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2016-01-06T23:23:48.096+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028096] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2016-01-06T23:23:48.098+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028098] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2016-01-06T23:23:48.253+0100] [glassfish 4.1] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028253] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2016-01-06T23:23:48.254+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028254] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2016-01-06T23:23:48.725+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028725] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:23:48.733+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119028733] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:23:49.041+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119029041] [levelValue: 800] [[
+  Loading application [ID2212-project-Server] at [/ID2212-project-Server]]]
+
+[2016-01-06T23:23:49.142+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=53 _ThreadName=admin-listener(3)] [timeMillis: 1452119029142] [levelValue: 800] [[
+  ID2212-project-Server was successfully deployed in 1 852 milliseconds.]]
+
+[2016-01-06T23:42:41.419+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=115 _ThreadName=Thread-26] [timeMillis: 1452120161419] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2016-01-06T23:42:41.427+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=115 _ThreadName=Thread-26] [timeMillis: 1452120161427] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@577bfadb from service registry.]]
+
+[2016-01-06T23:42:41.428+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=115 _ThreadName=Thread-10] [timeMillis: 1452120161428] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2016-01-06T23:42:41.432+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=115 _ThreadName=Thread-26] [timeMillis: 1452120161432] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2016-01-06T23:42:41.433+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=115 _ThreadName=Thread-26] [timeMillis: 1452120161433] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2016-01-06T23:42:41.500+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=121 _ThreadName=Thread-10] [timeMillis: 1452120161500] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2016-01-06T23:42:57.401+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452120177302] [timeMillis: 1452120177401] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  4.1.1  (build 1)]]
+
+[2016-01-06T23:42:57.403+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452120177302] [timeMillis: 1452120177403] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2016-01-06T23:42:57.499+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120177499] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-06T23:42:57.501+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120177501] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-06T23:42:57.506+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120177506] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2016-01-06T23:42:57.618+0100] [glassfish 4.1] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452120177309] [timeMillis: 1452120177618] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2016-01-06T23:42:57.666+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452120177309] [timeMillis: 1452120177666] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2016-01-06T23:42:57.834+0100] [glassfish 4.1] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120177834] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2016-01-06T23:42:57.850+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120177850] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-1, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:42:57.974+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120177974] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 96ms - bound to [/0.0.0.0:8080]]]
+
+[2016-01-06T23:42:57.992+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120177992] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-2, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:42:57.997+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120177997] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 2ms - bound to [/0.0.0.0:8181]]]
+
+[2016-01-06T23:42:58.001+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120178001] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=admin-listener, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:42:58.006+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120177301] [timeMillis: 1452120178006] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 2ms - bound to [/0.0.0.0:4848]]]
+
+[2016-01-06T23:42:58.011+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178011] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:42:58.046+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452120177302] [timeMillis: 1452120178046] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 1ms - bound to [/0.0.0.0:3700]]]
+
+[2016-01-06T23:42:58.281+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178281] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2016-01-06T23:42:58.284+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178284] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2016-01-06T23:42:58.289+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178289] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2016-01-06T23:42:58.321+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178321] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2016-01-06T23:42:58.494+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178494] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2016-01-06T23:42:58.499+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178499] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2016-01-06T23:42:58.501+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178501] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2016-01-06T23:42:58.518+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178518] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2016-01-06T23:42:58.520+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178520] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2016-01-06T23:42:58.712+0100] [glassfish 4.1] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178712] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2016-01-06T23:42:58.713+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120178713] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2016-01-06T23:42:59.294+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120179294] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:42:59.298+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120179298] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:42:59.498+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120179498] [levelValue: 800] [[
+  Loading application [ID2212-project-Server] at [/ID2212-project-Server]]]
+
+[2016-01-06T23:42:59.500+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120177308] [timeMillis: 1452120179500] [levelValue: 800] [[
+  Loading application ID2212-project-Server done in 1 844 ms]]
+
+[2016-01-06T23:42:59.501+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452120179501] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  4.1.1  (1) startup time : Felix (1 699ms), startup services(2 204ms), total(3 903ms)]]
+
+[2016-01-06T23:42:59.565+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452120177309] [timeMillis: 1452120179565] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 3ms - bound to [/0.0.0.0:7676]]]
+
+[2016-01-06T23:42:59.605+0100] [glassfish 4.1] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1452120179605] [levelValue: 800] [[
+  HV000001: Hibernate Validator 5.1.2.Final]]
+
+[2016-01-06T23:42:59.711+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452120179711] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3ac04654 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@336365bc.]]
+
+[2016-01-06T23:43:00.018+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=64 _ThreadName=Thread-17] [timeMillis: 1452120180018] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://130.229.179.6:8686/jndi/rmi://130.229.179.6:8686/jmxrmi]]
+
+[2016-01-06T23:44:37.542+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=85 _ThreadName=Thread-22] [timeMillis: 1452120277542] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2016-01-06T23:44:37.549+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=85 _ThreadName=Thread-22] [timeMillis: 1452120277549] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3ac04654 from service registry.]]
+
+[2016-01-06T23:44:37.549+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=85 _ThreadName=Thread-8] [timeMillis: 1452120277549] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2016-01-06T23:44:37.553+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=85 _ThreadName=Thread-22] [timeMillis: 1452120277553] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2016-01-06T23:44:37.554+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=85 _ThreadName=Thread-22] [timeMillis: 1452120277554] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2016-01-06T23:44:37.618+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=90 _ThreadName=Thread-8] [timeMillis: 1452120277618] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2016-01-06T23:45:04.778+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452120304654] [timeMillis: 1452120304778] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  4.1.1  (build 1)]]
+
+[2016-01-06T23:45:04.779+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452120304654] [timeMillis: 1452120304779] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2016-01-06T23:45:04.879+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120304879] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-06T23:45:04.881+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120304881] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-06T23:45:04.884+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120304884] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2016-01-06T23:45:04.976+0100] [glassfish 4.1] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120304976] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2016-01-06T23:45:05.020+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305020] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2016-01-06T23:45:05.203+0100] [glassfish 4.1] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305203] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2016-01-06T23:45:05.220+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120305220] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-1, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:45:05.319+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120305319] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 75ms - bound to [/0.0.0.0:8080]]]
+
+[2016-01-06T23:45:05.336+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120305336] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-2, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:45:05.340+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120305340] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 1ms - bound to [/0.0.0.0:8181]]]
+
+[2016-01-06T23:45:05.343+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120305343] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=admin-listener, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-06T23:45:05.348+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120305348] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 2ms - bound to [/0.0.0.0:4848]]]
+
+[2016-01-06T23:45:05.371+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305371] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:45:05.384+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452120304654] [timeMillis: 1452120305384] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 1ms - bound to [/0.0.0.0:3700]]]
+
+[2016-01-06T23:45:05.621+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305621] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2016-01-06T23:45:05.622+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305622] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2016-01-06T23:45:05.625+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305625] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2016-01-06T23:45:05.651+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305651] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2016-01-06T23:45:05.858+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305858] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2016-01-06T23:45:05.870+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305870] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2016-01-06T23:45:05.872+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305872] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2016-01-06T23:45:05.895+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305895] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2016-01-06T23:45:05.897+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120305897] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2016-01-06T23:45:06.087+0100] [glassfish 4.1] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120306087] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2016-01-06T23:45:06.087+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120306087] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2016-01-06T23:45:06.654+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120306654] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:45:06.661+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120306661] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:45:06.842+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120306842] [levelValue: 800] [[
+  Loading application [ID2212-project-Server] at [/ID2212-project-Server]]]
+
+[2016-01-06T23:45:06.844+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452120304660] [timeMillis: 1452120306844] [levelValue: 800] [[
+  Loading application ID2212-project-Server done in 1 834 ms]]
+
+[2016-01-06T23:45:06.845+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452120306845] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  4.1.1  (1) startup time : Felix (1 856ms), startup services(2 196ms), total(4 052ms)]]
+
+[2016-01-06T23:45:06.928+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452120304653] [timeMillis: 1452120306928] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 9ms - bound to [/0.0.0.0:7676]]]
+
+[2016-01-06T23:45:06.968+0100] [glassfish 4.1] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=45 _ThreadName=admin-listener(2)] [timeMillis: 1452120306968] [levelValue: 800] [[
+  HV000001: Hibernate Validator 5.1.2.Final]]
+
+[2016-01-06T23:45:07.075+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452120307075] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3ac04654 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@336365bc.]]
+
+[2016-01-06T23:45:07.192+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=65 _ThreadName=Thread-17] [timeMillis: 1452120307192] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://130.229.179.6:8686/jndi/rmi://130.229.179.6:8686/jmxrmi]]
+
+[2016-01-06T23:45:08.094+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1452120308094] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:45:08.169+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1452120308169] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:45:08.174+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1452120308174] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-06T23:45:08.321+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1452120308321] [levelValue: 800] [[
+  Loading application [ID2212-project-Server] at [/ID2212-project-Server]]]
+
+[2016-01-06T23:45:08.380+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1452120308380] [levelValue: 800] [[
+  ID2212-project-Server was successfully deployed in 536 milliseconds.]]
+
+[2016-01-07T00:40:13.059+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=125 _ThreadName=Thread-31] [timeMillis: 1452123613059] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2016-01-07T00:40:13.066+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=125 _ThreadName=Thread-31] [timeMillis: 1452123613066] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3ac04654 from service registry.]]
+
+[2016-01-07T00:40:13.066+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=125 _ThreadName=Thread-8] [timeMillis: 1452123613066] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2016-01-07T00:40:13.070+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=125 _ThreadName=Thread-31] [timeMillis: 1452123613070] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2016-01-07T00:40:13.071+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=125 _ThreadName=Thread-31] [timeMillis: 1452123613071] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2016-01-07T00:40:13.135+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=128 _ThreadName=Thread-8] [timeMillis: 1452123613135] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2016-01-07T09:41:58.683+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452156118543] [timeMillis: 1452156118683] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  4.1.1  (build 1)]]
+
+[2016-01-07T09:41:58.685+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452156118543] [timeMillis: 1452156118685] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2016-01-07T09:41:58.788+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156118788] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-07T09:41:58.790+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156118790] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-07T09:41:58.795+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156118795] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2016-01-07T09:41:58.915+0100] [glassfish 4.1] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452156118543] [timeMillis: 1452156118915] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2016-01-07T09:41:58.960+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156118960] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2016-01-07T09:41:59.164+0100] [glassfish 4.1] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119164] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2016-01-07T09:41:59.192+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156119192] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-1, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-07T09:41:59.317+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156119317] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 96ms - bound to [/0.0.0.0:8080]]]
+
+[2016-01-07T09:41:59.335+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156119335] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-2, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-07T09:41:59.341+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156119341] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 3ms - bound to [/0.0.0.0:8181]]]
+
+[2016-01-07T09:41:59.343+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156119343] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=admin-listener, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-07T09:41:59.348+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452156118542] [timeMillis: 1452156119348] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 1ms - bound to [/0.0.0.0:4848]]]
+
+[2016-01-07T09:41:59.352+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119352] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T09:41:59.384+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452156118543] [timeMillis: 1452156119384] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 2ms - bound to [/0.0.0.0:3700]]]
+
+[2016-01-07T09:41:59.616+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119616] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2016-01-07T09:41:59.616+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119616] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2016-01-07T09:41:59.620+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119620] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2016-01-07T09:41:59.649+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119649] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2016-01-07T09:41:59.949+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119949] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2016-01-07T09:41:59.956+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119956] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2016-01-07T09:41:59.959+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119959] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2016-01-07T09:41:59.982+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119982] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2016-01-07T09:41:59.983+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156119983] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2016-01-07T09:42:00.197+0100] [glassfish 4.1] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156120197] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2016-01-07T09:42:00.198+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156120198] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2016-01-07T09:42:00.730+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156120730] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T09:42:00.735+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156120735] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T09:42:01.016+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156121016] [levelValue: 800] [[
+  Loading application [ID2212-project-Server] at [/ID2212-project-Server]]]
+
+[2016-01-07T09:42:01.021+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156121021] [levelValue: 800] [[
+  Loading application ID2212-project-Server done in 2 058 ms]]
+
+[2016-01-07T09:42:01.025+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452156121025] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  4.1.1  (1) startup time : Felix (2 266ms), startup services(2 487ms), total(4 753ms)]]
+
+[2016-01-07T09:42:01.152+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1452156118548] [timeMillis: 1452156121152] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 6ms - bound to [/0.0.0.0:7676]]]
+
+[2016-01-07T09:42:01.230+0100] [glassfish 4.1] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1452156121230] [levelValue: 800] [[
+  HV000001: Hibernate Validator 5.1.2.Final]]
+
+[2016-01-07T09:42:01.716+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=90 _ThreadName=Thread-17] [timeMillis: 1452156121716] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://130.229.179.6:8686/jndi/rmi://130.229.179.6:8686/jmxrmi]]
+
+[2016-01-07T09:42:01.768+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452156121768] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3ac04654 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@336365bc.]]
+
+[2016-01-07T09:42:02.839+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(4)] [timeMillis: 1452156122839] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T09:42:02.904+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(4)] [timeMillis: 1452156122904] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T09:42:02.908+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(4)] [timeMillis: 1452156122908] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T09:42:03.035+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=47 _ThreadName=admin-listener(4)] [timeMillis: 1452156123035] [levelValue: 800] [[
+  Loading application [ID2212-project-Server] at [/ID2212-project-Server]]]
+
+[2016-01-07T09:42:03.079+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=47 _ThreadName=admin-listener(4)] [timeMillis: 1452156123079] [levelValue: 800] [[
+  ID2212-project-Server was successfully deployed in 443 milliseconds.]]
+
+[2016-01-07T10:54:05.103+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=153 _ThreadName=Thread-32] [timeMillis: 1452160445103] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2016-01-07T10:54:05.110+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=153 _ThreadName=Thread-32] [timeMillis: 1452160445110] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3ac04654 from service registry.]]
+
+[2016-01-07T10:54:05.110+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=153 _ThreadName=Thread-8] [timeMillis: 1452160445110] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2016-01-07T10:54:05.116+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=153 _ThreadName=Thread-32] [timeMillis: 1452160445116] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2016-01-07T10:54:05.117+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=153 _ThreadName=Thread-32] [timeMillis: 1452160445117] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2016-01-07T10:54:05.188+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=159 _ThreadName=Thread-8] [timeMillis: 1452160445188] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2016-01-07T11:10:15.072+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161415072] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  4.1.1  (build 1)]]
+
+[2016-01-07T11:10:15.075+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161415075] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2016-01-07T11:10:15.182+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452161414976] [timeMillis: 1452161415182] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-07T11:10:15.185+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452161414976] [timeMillis: 1452161415185] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2016-01-07T11:10:15.191+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452161414976] [timeMillis: 1452161415191] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2016-01-07T11:10:15.376+0100] [glassfish 4.1] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452161414976] [timeMillis: 1452161415376] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2016-01-07T11:10:15.444+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1452161414976] [timeMillis: 1452161415444] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2016-01-07T11:10:15.716+0100] [glassfish 4.1] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161415716] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2016-01-07T11:10:15.738+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161415738] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-1, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-07T11:10:15.887+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161415887] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 120ms - bound to [/0.0.0.0:8080]]]
+
+[2016-01-07T11:10:15.928+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161415928] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-2, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-07T11:10:15.944+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161415944] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 4ms - bound to [/0.0.0.0:8181]]]
+
+[2016-01-07T11:10:15.948+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161415948] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=admin-listener, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2016-01-07T11:10:15.959+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161415959] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 3ms - bound to [/0.0.0.0:4848]]]
+
+[2016-01-07T11:10:16.009+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416009] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T11:10:16.023+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1452161414977] [timeMillis: 1452161416023] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 4ms - bound to [/0.0.0.0:3700]]]
+
+[2016-01-07T11:10:16.364+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416364] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2016-01-07T11:10:16.364+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416364] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2016-01-07T11:10:16.368+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416368] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2016-01-07T11:10:16.403+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416403] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2016-01-07T11:10:16.619+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416619] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2016-01-07T11:10:16.626+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416626] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2016-01-07T11:10:16.628+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416628] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2016-01-07T11:10:16.650+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416650] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2016-01-07T11:10:16.654+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416654] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2016-01-07T11:10:16.870+0100] [glassfish 4.1] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416870] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2016-01-07T11:10:16.871+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161416871] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2016-01-07T11:10:17.349+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161417349] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T11:10:17.354+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161417354] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2016-01-07T11:10:17.547+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161417547] [levelValue: 800] [[
+  Loading application [ID2212-project-Server] at [/ID2212-project-Server]]]
+
+[2016-01-07T11:10:17.549+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161417549] [levelValue: 800] [[
+  Loading application ID2212-project-Server done in 2 110 ms]]
+
+[2016-01-07T11:10:17.550+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452161417550] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  4.1.1  (1) startup time : Felix (1 852ms), startup services(2 594ms), total(4 446ms)]]
+
+[2016-01-07T11:10:17.607+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1452161414982] [timeMillis: 1452161417607] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 2ms - bound to [/0.0.0.0:7676]]]
+
+[2016-01-07T11:10:17.703+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1452161417703] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3ac04654 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@336365bc.]]
+
+[2016-01-07T11:10:17.784+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=63 _ThreadName=Thread-17] [timeMillis: 1452161417784] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://130.229.179.6:8686/jndi/rmi://130.229.179.6:8686/jmxrmi]]
+
+[2016-01-07T11:10:20.197+0100] [glassfish 4.1] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=48 _ThreadName=admin-listener(5)] [timeMillis: 1452161420197] [levelValue: 800] [[
+  HV000001: Hibernate Validator 5.1.2.Final]]
+
+[2016-01-07T11:23:38.745+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=87 _ThreadName=Thread-22] [timeMillis: 1452162218745] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2016-01-07T11:23:38.750+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=87 _ThreadName=Thread-22] [timeMillis: 1452162218750] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3ac04654 from service registry.]]
+
+[2016-01-07T11:23:38.751+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=87 _ThreadName=Thread-8] [timeMillis: 1452162218751] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2016-01-07T11:23:38.755+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=87 _ThreadName=Thread-22] [timeMillis: 1452162218755] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2016-01-07T11:23:38.756+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=87 _ThreadName=Thread-22] [timeMillis: 1452162218756] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2016-01-07T11:23:38.843+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=92 _ThreadName=Thread-8] [timeMillis: 1452162218843] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
