@@ -42,7 +42,6 @@
   </resources>
   <servers>
     <server config-ref="server-config" name="server">
-      <application-ref ref="ID2212-project-Server" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jms/__defaultConnectionFactory"></resource-ref>
@@ -430,16 +429,5 @@
     <secure-admin-principal dn="CN=ankbook-pro-instance,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US"></secure-admin-principal>
   </secure-admin>
   <clusters></clusters>
-  <applications>
-    <application context-root="/ID2212-project-Server" object-type="user" name="ID2212-project-Server" directory-deployed="true" location="${com.sun.aas.instanceRootURI}/eclipseApps/ID2212-project-Server/">
-      <property name="archiveType" value="war"></property>
-      <property name="keepstate" value="true"></property>
-      <property name="appLocation" value="${com.sun.aas.instanceRootURI}/eclipseApps/ID2212-project-Server/"></property>
-      <property name="defaultAppName" value="ID2212-project-Server"></property>
-      <module name="ID2212-project-Server">
-        <engine sniffer="security"></engine>
-        <engine sniffer="web"></engine>
-      </module>
-    </application>
-  </applications>
+  <applications></applications>
 </domain>
