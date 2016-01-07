@@ -1,3 +1,5 @@
+package Server;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,8 +26,9 @@ public class GameServer implements Runnable {
 	private ArrayList<Integer> player2Marks = new ArrayList<Integer>();
 	private ArrayList<PrintWriter> sendList = new ArrayList<PrintWriter>();
 	private ArrayList<BufferedReader> receiveList = new ArrayList<BufferedReader>();
-	private ArrayList<Player> playerList = new ArrayList<Player>();
+	// private ArrayList<Player> playerList = new ArrayList<Player>();
 	private int[] scoreArray = new int[2];
+	private Player[] playerArray = new Player[2];
 	List<List<Integer>> wins = new ArrayList<List<Integer>>();
 	Random rand = new Random();
 
@@ -55,30 +58,51 @@ public class GameServer implements Runnable {
 
 	private void getPlayerInfo() {
 		String response;
-		boolean keepGoing;
-		while(keepGoing){
-			
+		// boolean keepGoing = true;
+		try {
+			while ((response = in1.readLine()) != null) {
+				Player player = lobby.getPlayer(response);
+				if (player == null) {
+					System.out.println("getPlayerInfo(): could not find user " + response);
+				}
+				playerArray[0] = player;
+			}
+			while ((response = in2.readLine()) != null) {
+				Player player = lobby.getPlayer(response);
+				if (player == null) {
+					System.out.println("getPlayerInfo(): could not find user " + response);
+				}
+				playerArray[1] = player;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
 	private void playGame() {
-		int startingPlayer = rand.nextInt(2);	// starting player blir 0 eller 1 AKA player 1 eller 2
-		int secondPlayer = 1 - startingPlayer;	// är startingplayer 1 blir second 1-1 = 0(P1), annars 1-0 =1(P2)
+		int startingPlayer = rand.nextInt(2); // starting player blir 0 eller 1
+												// AKA player 1 eller 2
+		int secondPlayer = 1 - startingPlayer; // är startingplayer 1(P2) blir
+												// second 1-1 = 0(P1), annars
+												// 1-0 =1(P2)
 		boolean startingPlayerWon = false;
+		//boolean startingPlayerWonGame = false;
 		String startingMarker = "X";
 		String secondMarker = "O";
 		boolean keepGoing = true;
 		while (true) { // hela gamet loop
 			if (keepGoing) {
-				if(startingPlayerWon){
+				if (startingPlayerWon) {
 					int temp = startingPlayer;
 					startingPlayer = secondPlayer;
 					secondPlayer = temp;
 					scoreArray = swapScore(scoreArray);
+					playerArray = swapPlayers(playerArray);
 				}
-				sendList.get(startingPlayer).println("begin");
+				sendList.get(startingPlayer).println("BEGIN");
 				sendList.get(startingPlayer).flush();
-				sendList.get(secondPlayer).println("wait");
+				sendList.get(secondPlayer).println("WAIT");
 				sendList.get(secondPlayer).flush();
 			}
 
@@ -98,23 +122,25 @@ public class GameServer implements Runnable {
 							sendList.get(secondPlayer).flush();
 							break;
 						} else {
-							sendList.get(startingPlayer).println("taken");
+							sendList.get(startingPlayer).println("TAKEN");
 						}
 					}
 					if (checkForWin(startingPlayer)) {
 						scoreArray[startingPlayer] = scoreArray[startingPlayer] + 1;
 						if (scoreArray[startingPlayer] == 3) {
 							keepGoing = false;
-							startingPlayerWon = true;
-							sendList.get(startingPlayer).println("won game");
+							//startingPlayerWonGame = true;
+							sendList.get(startingPlayer).println("WON GAME");
 							sendList.get(startingPlayer).flush();
-							sendList.get(secondPlayer).println("lost game");
+							sendList.get(secondPlayer).println("LOST GAME");
 							sendList.get(secondPlayer).flush();
+							lobby.addWin(playerArray[startingPlayer].getUserName());
+							lobby.addLoss(playerArray[secondPlayer].getUserName());
 						} else {
-
-							sendList.get(startingPlayer).println("won round");
+							startingPlayerWon = true;
+							sendList.get(startingPlayer).println("WON ROUND");
 							sendList.get(startingPlayer).flush();
-							sendList.get(secondPlayer).println("lost round");
+							sendList.get(secondPlayer).println("LOST ROUND");
 							sendList.get(secondPlayer).flush();
 
 						}
@@ -131,22 +157,24 @@ public class GameServer implements Runnable {
 							sendList.get(startingPlayer).println(secondMarker + "|" + response);
 							break;
 						} else {
-							sendList.get(secondPlayer).println("taken");
+							sendList.get(secondPlayer).println("TAKEN");
 						}
 					}
 					if (checkForWin(secondPlayer)) {
 						scoreArray[secondPlayer] = scoreArray[secondPlayer] + 1;
 						if (scoreArray[secondPlayer] == 3) {
 							keepGoing = false;
-							sendList.get(secondPlayer).println("won game");
+							sendList.get(secondPlayer).println("WON GAME");
 							sendList.get(secondPlayer).flush();
-							sendList.get(startingPlayer).println("lost game");
+							sendList.get(startingPlayer).println("LOST GAME");
 							sendList.get(startingPlayer).flush();
+							lobby.addWin(playerArray[secondPlayer].getUserName());
+							lobby.addLoss(playerArray[startingPlayer].getUserName());
 						} else {
 
-							sendList.get(secondPlayer).println("won round");
+							sendList.get(secondPlayer).println("WON ROUND");
 							sendList.get(secondPlayer).flush();
-							sendList.get(startingPlayer).println("lost round");
+							sendList.get(startingPlayer).println("LOST ROUND");
 							sendList.get(startingPlayer).flush();
 
 						}
@@ -158,19 +186,29 @@ public class GameServer implements Runnable {
 					e.printStackTrace();
 				}
 			}
-			break;
+			if (!keepGoing) {		//TODO här är osäkert läge, så kolla här först om loopen buggar
+				break;
+			}
 		}
 		try {
-			
+				//TODO skulle kunna flytta dethär till nr jag detectat att någon vunnit spelet
 			clientSocket1.close();
 			clientSocket2.close();
 			serverSocket.close();
+			lobby.removeGame(this.getPortNumber());	// denna måste imlementeras
+			// TODO uppdatera wins o losses för players
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
+	}
+
+	private Player[] swapPlayers(Player[] players) {
+		Player temp = players[0];
+		players[0] = players[1];
+		players[1] = temp;
+		return players;
 	}
 
 	private int[] swapScore(int[] score) {
@@ -255,36 +293,42 @@ public class GameServer implements Runnable {
 	public State getState() {
 		return state;
 	}
+	public Player[] getPlayers(){
+		return playerArray;
+		
+	}
 
 	private void searchingForPlayers() {
-		boolean keepSearching = true;
+		// TODO här är first suspecr om det inte funkar som det ska. borde vara lugnt eftersom serverSocket.accept 
+		// är blockerande men inte säker
+		//boolean keepSearching = true;
 		state = State.EMTPY;
-		// TODO Väntar på 2 spelare,
-		while (keepSearching) {
-			//if (!(clientSocket1.isBound()) && !(clientSocket2.isBound())) {
-				try {
-					clientSocket1 = serverSocket.accept();
-					in1 = new BufferedReader(new InputStreamReader(clientSocket1.getInputStream()));
-					out1 = new PrintWriter(clientSocket1.getOutputStream());
+		//while (keepSearching) {
+			// if (!(clientSocket1.isBound()) && !(clientSocket2.isBound())) {
+			try {
+				clientSocket1 = serverSocket.accept();
+				in1 = new BufferedReader(new InputStreamReader(clientSocket1.getInputStream()));
+				out1 = new PrintWriter(clientSocket1.getOutputStream());
 
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				state = State.IDLE;
-			//} else if (clientSocket1.isBound() && !(clientSocket2.isBound())) {
-				try {
-					clientSocket2 = serverSocket.accept();
-					in2 = new BufferedReader(new InputStreamReader(clientSocket2.getInputStream()));
-					out2 = new PrintWriter(clientSocket2.getOutputStream());
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				keepSearching = false;
-				state = State.FULL;
-			//}
-		}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			state = State.IDLE;
+			// } else if (clientSocket1.isBound() && !(clientSocket2.isBound()))
+			// {
+			try {
+				clientSocket2 = serverSocket.accept();
+				in2 = new BufferedReader(new InputStreamReader(clientSocket2.getInputStream()));
+				out2 = new PrintWriter(clientSocket2.getOutputStream());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//keepSearching = false;
+			state = State.FULL;
+			// }
+		//}
 
 	}
 
