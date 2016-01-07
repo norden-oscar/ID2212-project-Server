@@ -1,4 +1,5 @@
 package Server;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -66,7 +67,7 @@ public class GameServer implements Runnable {
 				}
 				playerArray[0] = player;
 			}
-			while((response = in2.readLine()) != null){
+			while ((response = in2.readLine()) != null) {
 				Player player = lobby.getPlayer(response);
 				if (player == null) {
 					System.out.println("getPlayerInfo(): could not find user " + response);
@@ -86,6 +87,7 @@ public class GameServer implements Runnable {
 												// second 1-1 = 0(P1), annars
 												// 1-0 =1(P2)
 		boolean startingPlayerWon = false;
+		//boolean startingPlayerWonGame = false;
 		String startingMarker = "X";
 		String secondMarker = "O";
 		boolean keepGoing = true;
@@ -98,9 +100,9 @@ public class GameServer implements Runnable {
 					scoreArray = swapScore(scoreArray);
 					playerArray = swapPlayers(playerArray);
 				}
-				sendList.get(startingPlayer).println("begin");
+				sendList.get(startingPlayer).println("BEGIN");
 				sendList.get(startingPlayer).flush();
-				sendList.get(secondPlayer).println("wait");
+				sendList.get(secondPlayer).println("WAIT");
 				sendList.get(secondPlayer).flush();
 			}
 
@@ -120,23 +122,25 @@ public class GameServer implements Runnable {
 							sendList.get(secondPlayer).flush();
 							break;
 						} else {
-							sendList.get(startingPlayer).println("taken");
+							sendList.get(startingPlayer).println("TAKEN");
 						}
 					}
 					if (checkForWin(startingPlayer)) {
 						scoreArray[startingPlayer] = scoreArray[startingPlayer] + 1;
 						if (scoreArray[startingPlayer] == 3) {
 							keepGoing = false;
-							startingPlayerWon = true;
-							sendList.get(startingPlayer).println("won game");
+							//startingPlayerWonGame = true;
+							sendList.get(startingPlayer).println("WON GAME");
 							sendList.get(startingPlayer).flush();
-							sendList.get(secondPlayer).println("lost game");
+							sendList.get(secondPlayer).println("LOST GAME");
 							sendList.get(secondPlayer).flush();
+							lobby.addWin(playerArray[startingPlayer].getUserName());
+							lobby.addLoss(playerArray[secondPlayer].getUserName());
 						} else {
-
-							sendList.get(startingPlayer).println("won round");
+							startingPlayerWon = true;
+							sendList.get(startingPlayer).println("WON ROUND");
 							sendList.get(startingPlayer).flush();
-							sendList.get(secondPlayer).println("lost round");
+							sendList.get(secondPlayer).println("LOST ROUND");
 							sendList.get(secondPlayer).flush();
 
 						}
@@ -153,22 +157,24 @@ public class GameServer implements Runnable {
 							sendList.get(startingPlayer).println(secondMarker + "|" + response);
 							break;
 						} else {
-							sendList.get(secondPlayer).println("taken");
+							sendList.get(secondPlayer).println("TAKEN");
 						}
 					}
 					if (checkForWin(secondPlayer)) {
 						scoreArray[secondPlayer] = scoreArray[secondPlayer] + 1;
 						if (scoreArray[secondPlayer] == 3) {
 							keepGoing = false;
-							sendList.get(secondPlayer).println("won game");
+							sendList.get(secondPlayer).println("WON GAME");
 							sendList.get(secondPlayer).flush();
-							sendList.get(startingPlayer).println("lost game");
+							sendList.get(startingPlayer).println("LOST GAME");
 							sendList.get(startingPlayer).flush();
+							lobby.addWin(playerArray[secondPlayer].getUserName());
+							lobby.addLoss(playerArray[startingPlayer].getUserName());
 						} else {
 
-							sendList.get(secondPlayer).println("won round");
+							sendList.get(secondPlayer).println("WON ROUND");
 							sendList.get(secondPlayer).flush();
-							sendList.get(startingPlayer).println("lost round");
+							sendList.get(startingPlayer).println("LOST ROUND");
 							sendList.get(startingPlayer).flush();
 
 						}
@@ -180,13 +186,16 @@ public class GameServer implements Runnable {
 					e.printStackTrace();
 				}
 			}
-			break;
+			if (!keepGoing) {		//TODO här är osäkert läge, så kolla här först om loopen buggar
+				break;
+			}
 		}
 		try {
-
+				//TODO skulle kunna flytta dethär till nr jag detectat att någon vunnit spelet
 			clientSocket1.close();
 			clientSocket2.close();
 			serverSocket.close();
+			lobby.removeGame(this.getPortNumber());	// denna måste imlementeras
 			// TODO uppdatera wins o losses för players
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -194,7 +203,8 @@ public class GameServer implements Runnable {
 		}
 
 	}
-	private Player[] swapPlayers(Player[] players){
+
+	private Player[] swapPlayers(Player[] players) {
 		Player temp = players[0];
 		players[0] = players[1];
 		players[1] = temp;
@@ -283,12 +293,17 @@ public class GameServer implements Runnable {
 	public State getState() {
 		return state;
 	}
+	public Player[] getPlayers(){
+		return playerArray;
+		
+	}
 
 	private void searchingForPlayers() {
-		boolean keepSearching = true;
+		// TODO här är first suspecr om det inte funkar som det ska. borde vara lugnt eftersom serverSocket.accept 
+		// är blockerande men inte säker
+		//boolean keepSearching = true;
 		state = State.EMTPY;
-		// TODO Väntar på 2 spelare,
-		while (keepSearching) {
+		//while (keepSearching) {
 			// if (!(clientSocket1.isBound()) && !(clientSocket2.isBound())) {
 			try {
 				clientSocket1 = serverSocket.accept();
@@ -310,10 +325,10 @@ public class GameServer implements Runnable {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			keepSearching = false;
+			//keepSearching = false;
 			state = State.FULL;
 			// }
-		}
+		//}
 
 	}
 
