@@ -1,4 +1,4 @@
 
 public enum State {
-	EMTPY,IDLE,FULL
+	NOT_READY,EMTPY,IDLE,FULL
 }

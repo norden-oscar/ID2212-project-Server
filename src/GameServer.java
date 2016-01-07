@@ -15,7 +15,7 @@ public class GameServer implements Runnable {
 	private Socket clientSocket1, clientSocket2;
 	private PrintWriter out1, out2;
 	private BufferedReader in1, in2;
-	protected State state;
+	private State state;
 	private ServerSocket serverSocket;
 	private int portNumber = 0;
 	private Lobby lobby;
@@ -24,6 +24,7 @@ public class GameServer implements Runnable {
 	private ArrayList<Integer> player2Marks = new ArrayList<Integer>();
 	private ArrayList<PrintWriter> sendList = new ArrayList<PrintWriter>();
 	private ArrayList<BufferedReader> receiveList = new ArrayList<BufferedReader>();
+	private ArrayList<Player> playerList = new ArrayList<Player>();
 	private int[] scoreArray = new int[2];
 	List<List<Integer>> wins = new ArrayList<List<Integer>>();
 	Random rand = new Random();
@@ -32,6 +33,7 @@ public class GameServer implements Runnable {
 		Random rand = new Random();
 		portNumber = rand.nextInt(1000) + 3000;
 		this.lobby = lobby;
+		state = State.NOT_READY;
 		try {
 			serverSocket = new ServerSocket(portNumber);
 		} catch (IOException e) {
@@ -45,9 +47,18 @@ public class GameServer implements Runnable {
 	@Override
 	public void run() {
 		searchingForPlayers();
+		getPlayerInfo();
 		initializeGame();
 		playGame();
 
+	}
+
+	private void getPlayerInfo() {
+		String response;
+		boolean keepGoing;
+		while(keepGoing){
+			
+		}
 	}
 
 	private void playGame() {
@@ -247,6 +258,7 @@ public class GameServer implements Runnable {
 
 	private void searchingForPlayers() {
 		boolean keepSearching = true;
+		state = State.EMTPY;
 		// TODO Väntar på 2 spelare,
 		while (keepSearching) {
 			//if (!(clientSocket1.isBound()) && !(clientSocket2.isBound())) {

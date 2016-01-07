@@ -1,6 +1,3 @@
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -35,7 +32,31 @@ public class Lobby {
 			e.printStackTrace();
 		}
 	}
-
+	public Player getPlayer(String userName){
+		for(int i = 0;i<registeredPlayers.size();i++){
+			Player tempPlayer = registeredPlayers.get(i);
+			if(tempPlayer.equals(userName)){
+				return tempPlayer;
+			}
+		}
+		return null;
+	}
+	
+	public String findGame(){
+		for(int i = 0;i<gameList.size();i++){
+			if(gameList.get(i).getState()==State.EMTPY || gameList.get(i).getState()==State.IDLE){
+				
+				return ""+gameList.get(i).getPortNumber();
+			}
+		}
+		GameServer newGame = createGame();
+		while(true){
+			if(newGame.getState()==State.EMTPY || newGame.getState()==State.IDLE){
+				return "" + newGame.getPortNumber();
+			}
+		}
+		
+	}
 	public String[] fetchProfile(String userName) {
 		Player player;
 		String[] answer = new String[3];
@@ -101,6 +122,7 @@ public class Lobby {
 			register.setString(1, userName);
 			register.setString(2, passWord);
 			register.executeUpdate();
+			clearParameters();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -136,10 +158,11 @@ public class Lobby {
 		executor = Executors.newFixedThreadPool(poolSize);
 	}
 
-	public void createGame() {
+	private GameServer createGame() {
 		GameServer tempGame = new GameServer(this);
 		gameList.add(tempGame);
 		executor.execute(tempGame);
+		return tempGame;
 
 		// TODO Kolla upp vilken port gamet fick och skicka tillbaka det till
 		// servleten så att den kan ge portnummer till clienten, kan skicka
