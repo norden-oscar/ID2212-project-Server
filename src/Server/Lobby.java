@@ -243,7 +243,7 @@ public class Lobby {
 	}
 
 	public void removeGame(int portNumber) {
-		for(int i; i<gameList.size();i++){
+		for(int i=0; i<gameList.size();i++){
 			if(gameList.get(i).getPortNumber()==portNumber){
 				gameList.remove(i);
 				break;
