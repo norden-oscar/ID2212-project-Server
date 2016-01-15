@@ -162,8 +162,7 @@ public class Lobby {
 				registeredPlayers.add(player);
 				System.out.println(player.getUserName());
 
-				// trader = new TraderImpl(userame, passWord, itemsSold,
-				// itemBought);
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -241,6 +240,16 @@ public class Lobby {
 		// servleten så att den kan ge portnummer till clienten, kan skicka
 		// tillbaka det genom att returna
 		// en int
+	}
+
+	public void removeGame(int portNumber) {
+		for(int i; i<gameList.size();i++){
+			if(gameList.get(i).getPortNumber()==portNumber){
+				gameList.remove(i);
+				break;
+			}
+		}
+		
 	}
 
 }
