@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -151,7 +152,7 @@ public class Lobby {
 			fetchPlayers = conn.prepareStatement("SELECT * FROM players");
 
 			ResultSet rs1 = fetchPlayers.executeQuery();
-			System.out.println("Registered users: ");
+			System.out.println("fetching registered players");
 			while (rs1.next()) {
 
 				String loginUserName = rs1.getString(1);
@@ -160,10 +161,9 @@ public class Lobby {
 				int losses = rs1.getInt(4);
 				Player player = new Player(loginUserName, loginPassWord, wins, losses);
 				registeredPlayers.add(player);
-				System.out.println(player.getUserName());
-
-				
 			}
+			System.out.println(Arrays.asList(registeredPlayers));
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
