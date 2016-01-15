@@ -5,7 +5,7 @@ public class LobbyTest {
 
 	public static void main(String[] args) {
 		Lobby lobby = Lobby.getLobby();
-		Player player = lobby.getPlayer("OneEyedPirate");
+		/*Player player = lobby.getPlayer("OneEyedPirate");
 		//lobby.addWin("OneEyedPirate");
 		//lobby.addLoss("OneEyedPirate");
 		System.out.println("username: "+player.getUserName()+", password: "+player.getPassword()+
@@ -14,7 +14,7 @@ public class LobbyTest {
 		
 		String test = profile[0] +" "+profile[1]+" "+profile[2];
 		System.out.println(test);
-		System.out.println(Arrays.asList(profile));
+		System.out.println(Arrays.asList(profile)); */
 		
 	}
 
