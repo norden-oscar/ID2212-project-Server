@@ -182,6 +182,13 @@ public class Lobby {
 		return "NO_SUCH_USER_EXISTS";
 
 	}
+	private void clearPlayers(){
+		if(!registeredPlayers.isEmpty()){
+			for(int i =0;i<registeredPlayers.size();i++){
+				registeredPlayers.remove(i);
+			}
+		}
+	}
 
 	public String registerUser(String userName, String passWord) {
 
@@ -195,6 +202,8 @@ public class Lobby {
 			register.setString(2, passWord);
 			register.executeUpdate();
 			clearParameters();
+			clearPlayers();
+			fetchPlayers();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

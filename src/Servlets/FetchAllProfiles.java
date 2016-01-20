@@ -38,7 +38,7 @@ public class FetchAllProfiles extends HttpServlet {
 				player1 = tempGame.getPlayers()[0].getUserName();
 				player2 = tempGame.getPlayers()[1].getUserName();
 			}
-			result = result +" "+player1 + " " + player2 + " " + tempGame.getPortNumber() +" "+ tempGame.getState().toString();
+			result = result +player1 + " " + player2 + " " + tempGame.getPortNumber() +" "+ tempGame.getState().toString()+" ";
 		}
 		response.getWriter().write(result);
 	}
