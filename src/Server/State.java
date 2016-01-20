@@ -1,5 +1,5 @@
 package Server;
 
 public enum State {
-	NOT_READY,EMTPY,IDLE,FULL
+	NOT_READY,EMTPY,IDLE,FULL, READY
 }

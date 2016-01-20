@@ -30,7 +30,7 @@ public class FetchAllProfiles extends HttpServlet {
 			String player1,player2;
 			GameServer tempGame =gameList.get(i);
 			String portNumber = ""+tempGame.getPortNumber();
-			if(tempGame.getState()!=State.FULL){
+			if(tempGame.getState()!=State.READY){
 				player1="-";
 				player2 = "-";
 			}
