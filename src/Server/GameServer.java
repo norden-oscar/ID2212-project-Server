@@ -74,6 +74,7 @@ public class GameServer implements Runnable {
 				}
 				playerArray[1] = player;
 			}
+			state = State.READY;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
