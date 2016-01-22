@@ -88,10 +88,12 @@ public class GameServer implements Runnable {
 												// second 1-1 = 0(P1), annars
 												// 1-0 =1(P2)
 		boolean startingPlayerWon = false;
-		//boolean startingPlayerWonGame = false;
+		// boolean startingPlayerWonGame = false;
 		String startingMarker = "X";
 		String secondMarker = "O";
 		boolean keepGoing = true;
+		boolean forfeit = false;
+		
 		while (true) { // hela gamet loop
 			if (keepGoing) {
 				if (startingPlayerWon) {
@@ -114,6 +116,20 @@ public class GameServer implements Runnable {
 					while ((response = receiveList.get(startingPlayer).readLine()) != null) {
 						// osäker på om den fortsätter till else, annars får jag
 						// loopa på en boolean ist
+						if (response == "forfeit") { // starting player ger upp,
+														// så den förlorar och
+														// den andra vinner
+														// spelet
+							// sen bryter vi hela loopen och spelet är klart
+							forfeit = true;
+							sendList.get(secondPlayer).println("WON GAME");
+							sendList.get(secondPlayer).flush();
+							sendList.get(startingPlayer).println("LOST GAME");
+							sendList.get(startingPlayer).flush();
+							lobby.addWin(playerArray[secondPlayer].getUserName());
+							lobby.addLoss(playerArray[startingPlayer].getUserName());
+							break;
+						}
 
 						if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(startingMarker, Integer.parseInt(response), startingPlayer);
@@ -124,13 +140,28 @@ public class GameServer implements Runnable {
 							break;
 						} else {
 							sendList.get(startingPlayer).println("TAKEN");
+							sendList.get(startingPlayer).flush();
+
 						}
 					}
+					if (forfeit) {
+						keepGoing = false;
+						break;
+					}
+					if (checkForDraw()) {
+						sendList.get(startingPlayer).println("DRAW");
+						sendList.get(startingPlayer).flush();
+						sendList.get(secondPlayer).println("DRAW");
+						sendList.get(secondPlayer).flush();
+						startingPlayerWon = true;
+						break;
+					}
+
 					if (checkForWin(startingPlayer)) {
 						scoreArray[startingPlayer] = scoreArray[startingPlayer] + 1;
 						if (scoreArray[startingPlayer] == 3) {
 							keepGoing = false;
-							//startingPlayerWonGame = true;
+							// startingPlayerWonGame = true;
 							sendList.get(startingPlayer).println("WON GAME");
 							sendList.get(startingPlayer).flush();
 							sendList.get(secondPlayer).println("LOST GAME");
@@ -152,15 +183,46 @@ public class GameServer implements Runnable {
 						// osäker på om den fortsätter till else, annars får jag
 						// loopa på en boolean ist
 
+						if (response == "forfeit") { // starting player ger upp,
+														// så den förlorar och
+														// den andra vinner
+														// spelet
+							// sen bryter vi hela loopen och spelet är klart
+							forfeit = true;
+							sendList.get(startingPlayer).println("WON GAME");
+							sendList.get(startingPlayer).flush();
+							sendList.get(secondPlayer).println("LOST GAME");
+							sendList.get(secondPlayer).flush();
+							lobby.addWin(playerArray[secondPlayer].getUserName());
+							lobby.addLoss(playerArray[startingPlayer].getUserName());
+							break;
+						}
 						if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(secondMarker, Integer.parseInt(response), secondPlayer);
 							sendList.get(secondPlayer).println(secondMarker + "|" + response); // "X|position
+							sendList.get(secondPlayer).flush();
 							sendList.get(startingPlayer).println(secondMarker + "|" + response);
+							sendList.get(startingPlayer).flush();
 							break;
 						} else {
 							sendList.get(secondPlayer).println("TAKEN");
+							sendList.get(secondPlayer).flush();
 						}
 					}
+
+					if (forfeit) {
+						keepGoing = false;
+						break;
+					}
+					if (checkForDraw()) {
+						sendList.get(startingPlayer).println("DRAW");
+						sendList.get(startingPlayer).flush();
+						sendList.get(secondPlayer).println("DRAW");
+						sendList.get(secondPlayer).flush();
+						startingPlayerWon = true;
+						break;
+					}
+
 					if (checkForWin(secondPlayer)) {
 						scoreArray[secondPlayer] = scoreArray[secondPlayer] + 1;
 						if (scoreArray[secondPlayer] == 3) {
@@ -187,16 +249,18 @@ public class GameServer implements Runnable {
 					e.printStackTrace();
 				}
 			}
-			if (!keepGoing) {		//TODO här är osäkert läge, så kolla här först om loopen buggar
+			if (!keepGoing) { // TODO här är osäkert läge, så kolla här först om
+								// loopen buggar
 				break;
 			}
 		}
 		try {
-				//TODO skulle kunna flytta dethär till nr jag detectat att någon vunnit spelet
+			// TODO skulle kunna flytta dethär till nr jag detectat att någon
+			// vunnit spelet
 			clientSocket1.close();
 			clientSocket2.close();
 			serverSocket.close();
-			lobby.removeGame(this.getPortNumber());	// denna måste imlementeras
+			lobby.removeGame(this.getPortNumber()); // denna måste imlementeras
 			// TODO uppdatera wins o losses för players
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -224,6 +288,15 @@ public class GameServer implements Runnable {
 			return true;
 		}
 		return false;
+	}
+
+	private boolean checkForDraw() {
+		for (int i = 0; i < board.length; i++) {
+			if (board[i] == "-") {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	private boolean checkForWin(int player) { // player är antingen 0 eller 1, 0
@@ -294,42 +367,44 @@ public class GameServer implements Runnable {
 	public State getState() {
 		return state;
 	}
-	public Player[] getPlayers(){
+
+	public Player[] getPlayers() {
 		return playerArray;
-		
+
 	}
 
 	private void searchingForPlayers() {
-		// TODO här är first suspecr om det inte funkar som det ska. borde vara lugnt eftersom serverSocket.accept 
+		// TODO här är first suspecr om det inte funkar som det ska. borde vara
+		// lugnt eftersom serverSocket.accept
 		// är blockerande men inte säker
-		//boolean keepSearching = true;
+		// boolean keepSearching = true;
 		state = State.EMTPY;
-		//while (keepSearching) {
-			// if (!(clientSocket1.isBound()) && !(clientSocket2.isBound())) {
-			try {
-				clientSocket1 = serverSocket.accept();
-				in1 = new BufferedReader(new InputStreamReader(clientSocket1.getInputStream()));
-				out1 = new PrintWriter(clientSocket1.getOutputStream());
+		// while (keepSearching) {
+		// if (!(clientSocket1.isBound()) && !(clientSocket2.isBound())) {
+		try {
+			clientSocket1 = serverSocket.accept();
+			in1 = new BufferedReader(new InputStreamReader(clientSocket1.getInputStream()));
+			out1 = new PrintWriter(clientSocket1.getOutputStream());
 
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			state = State.IDLE;
-			// } else if (clientSocket1.isBound() && !(clientSocket2.isBound()))
-			// {
-			try {
-				clientSocket2 = serverSocket.accept();
-				in2 = new BufferedReader(new InputStreamReader(clientSocket2.getInputStream()));
-				out2 = new PrintWriter(clientSocket2.getOutputStream());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			//keepSearching = false;
-			state = State.FULL;
-			// }
-		//}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		state = State.IDLE;
+		// } else if (clientSocket1.isBound() && !(clientSocket2.isBound()))
+		// {
+		try {
+			clientSocket2 = serverSocket.accept();
+			in2 = new BufferedReader(new InputStreamReader(clientSocket2.getInputStream()));
+			out2 = new PrintWriter(clientSocket2.getOutputStream());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// keepSearching = false;
+		state = State.FULL;
+		// }
+		// }
 
 	}
 
