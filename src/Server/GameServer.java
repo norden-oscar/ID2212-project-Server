@@ -84,8 +84,7 @@ public class GameServer implements Runnable {
 			}
 			Player player2 = lobby.getPlayer(response);
 			playerArray[1] = player2;
-			out2.println("WAIT");
-			out2.flush();
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -127,6 +126,11 @@ public class GameServer implements Runnable {
 												// 1-0 =1(P2)
 		boolean startingPlayerWon = false;
 		// boolean startingPlayerWonGame = false;
+		// skickar namnet på motståndaren till båda klienterna
+		out1.println(playerArray[1].getUserName());
+		out1.flush();
+		out2.println(playerArray[0].getUserName());
+		out2.flush();
 		String startingMarker = "X";
 		String secondMarker = "O";
 		boolean keepGoing = true;
