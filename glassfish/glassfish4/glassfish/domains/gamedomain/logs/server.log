@@ -139,3 +139,21 @@
 [2016-01-22T14:56:16.314+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00003] [javax.enterprise.logging] [tid: _ThreadID=109 _ThreadName=pool-25-thread-1] [timeMillis: 1453470976314] [levelValue: 800] [[
   Updated logger levels successfully.]]
 
+[2016-01-22T14:58:44.062+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=111 _ThreadName=Thread-27] [timeMillis: 1453471124062] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2016-01-22T14:58:44.076+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=111 _ThreadName=Thread-27] [timeMillis: 1453471124076] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@1e79d43 from service registry.]]
+
+[2016-01-22T14:58:44.076+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=111 _ThreadName=Thread-8] [timeMillis: 1453471124076] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2016-01-22T14:58:44.084+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=111 _ThreadName=Thread-27] [timeMillis: 1453471124084] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2016-01-22T14:58:44.084+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=111 _ThreadName=Thread-27] [timeMillis: 1453471124084] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2016-01-22T14:58:44.192+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=118 _ThreadName=Thread-8] [timeMillis: 1453471124192] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
