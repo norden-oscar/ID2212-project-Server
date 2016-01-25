@@ -84,7 +84,7 @@ public class GameServer implements Runnable {
 			}
 			Player player2 = lobby.getPlayer(response);
 			playerArray[1] = player2;
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
