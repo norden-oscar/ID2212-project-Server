@@ -158,6 +158,7 @@ public class GameServer implements Runnable {
 
 				try {
 					System.out.println("starting player loop");
+					startingPlayerLoop:
 					while ((response = receiveList.get(startingPlayer).readLine()) != null) {
 						// osäker på om den fortsätter till else, annars får jag
 						// loopa på en boolean ist
@@ -173,7 +174,7 @@ public class GameServer implements Runnable {
 							sendList.get(startingPlayer).flush();
 							lobby.addWin(playerArray[secondPlayer].getUserName());
 							lobby.addLoss(playerArray[startingPlayer].getUserName());
-							break;
+							break startingPlayerLoop;
 						}
 						if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(startingMarker, Integer.parseInt(response), startingPlayer);
@@ -182,7 +183,7 @@ public class GameServer implements Runnable {
 							sendList.get(startingPlayer).flush();
 							sendList.get(secondPlayer).println(startingMarker + "|" + response);
 							sendList.get(secondPlayer).flush();
-							break;
+							break startingPlayerLoop;
 						} else {
 							sendList.get(startingPlayer).println("TAKEN");
 							sendList.get(startingPlayer).flush();
@@ -223,7 +224,9 @@ public class GameServer implements Runnable {
 						}
 						break;
 					}
+					System.out.println("second player loop");
 					sendList.get(secondPlayer).println("BEGIN");
+					secondPlayerLoop:
 					while ((response = receiveList.get(secondPlayer).readLine()) != null) {
 						// osäker på om den fortsätter till else, annars får jag
 						// loopa på en boolean ist
@@ -240,7 +243,7 @@ public class GameServer implements Runnable {
 							sendList.get(secondPlayer).flush();
 							lobby.addWin(playerArray[secondPlayer].getUserName());
 							lobby.addLoss(playerArray[startingPlayer].getUserName());
-							break;
+							break secondPlayerLoop;
 						}
 						if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(secondMarker, Integer.parseInt(response), secondPlayer);
@@ -249,7 +252,7 @@ public class GameServer implements Runnable {
 							sendList.get(secondPlayer).flush();
 							sendList.get(startingPlayer).println(secondMarker + "|" + response);
 							sendList.get(startingPlayer).flush();
-							break;
+							break secondPlayerLoop;
 						} else {
 							sendList.get(secondPlayer).println("TAKEN");
 							sendList.get(secondPlayer).flush();
