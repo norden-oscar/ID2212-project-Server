@@ -173,7 +173,6 @@ public class GameServer implements Runnable {
 							lobby.addLoss(playerArray[startingPlayer].getUserName());
 							break;
 						}
-
 						if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(startingMarker, Integer.parseInt(response), startingPlayer);
 							sendList.get(startingPlayer).println(startingMarker + "|" + response); // "X|position
@@ -221,7 +220,7 @@ public class GameServer implements Runnable {
 						}
 						break;
 					}
-
+					sendList.get(secondPlayer).println("BEGIN");
 					while ((response = receiveList.get(secondPlayer).readLine()) != null) {
 						// osäker på om den fortsätter till else, annars får jag
 						// loopa på en boolean ist
@@ -286,7 +285,7 @@ public class GameServer implements Runnable {
 						}
 						break;
 					}
-
+					sendList.get(startingPlayer).println("BEGIN");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
