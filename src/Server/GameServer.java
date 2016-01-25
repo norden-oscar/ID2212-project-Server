@@ -139,6 +139,7 @@ public class GameServer implements Runnable {
 		while (true) { // hela gamet loop
 			if (keepGoing) {
 				if (startingPlayerWon) {
+					System.out.println("Swaping starting player");
 					int temp = startingPlayer;
 					startingPlayer = secondPlayer;
 					secondPlayer = temp;
@@ -156,6 +157,7 @@ public class GameServer implements Runnable {
 				String response;
 
 				try {
+					System.out.println("starting player loop");
 					while ((response = receiveList.get(startingPlayer).readLine()) != null) {
 						// osäker på om den fortsätter till else, annars får jag
 						// loopa på en boolean ist
@@ -175,6 +177,7 @@ public class GameServer implements Runnable {
 						}
 						if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(startingMarker, Integer.parseInt(response), startingPlayer);
+							System.out.println("Starting player put "+startingMarker + " on tile: "+ response );
 							sendList.get(startingPlayer).println(startingMarker + "|" + response); // "X|position
 							sendList.get(startingPlayer).flush();
 							sendList.get(secondPlayer).println(startingMarker + "|" + response);
@@ -241,6 +244,7 @@ public class GameServer implements Runnable {
 						}
 						if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(secondMarker, Integer.parseInt(response), secondPlayer);
+							System.out.println("Second player put "+secondMarker + " on tile: "+ response );
 							sendList.get(secondPlayer).println(secondMarker + "|" + response); // "X|position
 							sendList.get(secondPlayer).flush();
 							sendList.get(startingPlayer).println(secondMarker + "|" + response);
