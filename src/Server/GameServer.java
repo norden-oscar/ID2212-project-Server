@@ -139,7 +139,7 @@ public class GameServer implements Runnable {
 		while (true) { // hela gamet loop
 			if (keepGoing) {
 				if (startingPlayerWon) {
-					System.out.println("Swaping starting player");
+					System.out.println("---Swaping starting player---");
 					int temp = startingPlayer;
 					startingPlayer = secondPlayer;
 					secondPlayer = temp;
@@ -157,7 +157,7 @@ public class GameServer implements Runnable {
 				String response;
 
 				try {
-					System.out.println("starting player loop");
+					System.out.println("---starting player loop---");
 					startingPlayerLoop:
 					while ((response = receiveList.get(startingPlayer).readLine()) != null) {
 						// osäker på om den fortsätter till else, annars får jag
@@ -167,6 +167,7 @@ public class GameServer implements Runnable {
 														// den andra vinner
 														// spelet
 							// sen bryter vi hela loopen och spelet är klart
+							System.out.println("---starting player forfeit---");
 							forfeit = true;
 							sendList.get(secondPlayer).println("WON GAME");
 							sendList.get(secondPlayer).flush();
@@ -178,13 +179,14 @@ public class GameServer implements Runnable {
 						}
 						if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(startingMarker, Integer.parseInt(response), startingPlayer);
-							System.out.println("Starting player put "+startingMarker + " on tile: "+ response );
+							System.out.println("---Starting player put "+startingMarker + " on tile: "+ response+"---" );
 							sendList.get(startingPlayer).println(startingMarker + "|" + response); // "X|position
 							sendList.get(startingPlayer).flush();
 							sendList.get(secondPlayer).println(startingMarker + "|" + response);
 							sendList.get(secondPlayer).flush();
 							break startingPlayerLoop;
 						} else {
+							System.out.println("---starting player tile taken---");
 							sendList.get(startingPlayer).println("TAKEN");
 							sendList.get(startingPlayer).flush();
 
@@ -195,6 +197,7 @@ public class GameServer implements Runnable {
 						break;
 					}
 					if (checkForDraw()) {
+						System.out.println("---starting player draw detected---");
 						sendList.get(startingPlayer).println("DRAW");
 						sendList.get(startingPlayer).flush();
 						sendList.get(secondPlayer).println("DRAW");
@@ -202,10 +205,12 @@ public class GameServer implements Runnable {
 						startingPlayerWon = true;
 						break;
 					}
-
+						System.out.println("---Checking round win starting player: startingplayer = "+startingPlayer+"---");
 					if (checkForWin(startingPlayer)) {
+						System.out.println("---starting player round win detected---");
 						scoreArray[startingPlayer] = scoreArray[startingPlayer] + 1;
 						if (scoreArray[startingPlayer] == 3) {
+							System.out.println("---starting player won game---");
 							keepGoing = false;
 							// startingPlayerWonGame = true;
 							sendList.get(startingPlayer).println("WON GAME");
@@ -215,6 +220,7 @@ public class GameServer implements Runnable {
 							lobby.addWin(playerArray[startingPlayer].getUserName());
 							lobby.addLoss(playerArray[secondPlayer].getUserName());
 						} else {
+							System.out.println("---starting player won round but not game---");
 							startingPlayerWon = true;
 							sendList.get(startingPlayer).println("WON ROUND");
 							sendList.get(startingPlayer).flush();
@@ -224,7 +230,7 @@ public class GameServer implements Runnable {
 						}
 						break;
 					}
-					System.out.println("second player loop");
+					System.out.println("---second player loop---");
 					sendList.get(secondPlayer).println("BEGIN");
 					secondPlayerLoop:
 					while ((response = receiveList.get(secondPlayer).readLine()) != null) {
@@ -236,6 +242,7 @@ public class GameServer implements Runnable {
 														// den andra vinner
 														// spelet
 							// sen bryter vi hela loopen och spelet är klart
+							System.out.println("---second player forfeit---");
 							forfeit = true;
 							sendList.get(startingPlayer).println("WON GAME");
 							sendList.get(startingPlayer).flush();
@@ -254,6 +261,7 @@ public class GameServer implements Runnable {
 							sendList.get(startingPlayer).flush();
 							break secondPlayerLoop;
 						} else {
+							System.out.println("---second player tile taken---");
 							sendList.get(secondPlayer).println("TAKEN");
 							sendList.get(secondPlayer).flush();
 						}
@@ -264,6 +272,7 @@ public class GameServer implements Runnable {
 						break;
 					}
 					if (checkForDraw()) {
+						System.out.println("---second player draw detected---");
 						sendList.get(startingPlayer).println("DRAW");
 						sendList.get(startingPlayer).flush();
 						sendList.get(secondPlayer).println("DRAW");
@@ -271,10 +280,12 @@ public class GameServer implements Runnable {
 						startingPlayerWon = true;
 						break;
 					}
-
+					System.out.println("---Checking round win second player: secondplayer = "+startingPlayer+"---");
 					if (checkForWin(secondPlayer)) {
+						System.out.println("---second player round win detected---");
 						scoreArray[secondPlayer] = scoreArray[secondPlayer] + 1;
 						if (scoreArray[secondPlayer] == 3) {
+							System.out.println("---second player won game---");
 							keepGoing = false;
 							sendList.get(secondPlayer).println("WON GAME");
 							sendList.get(secondPlayer).flush();
@@ -283,7 +294,7 @@ public class GameServer implements Runnable {
 							lobby.addWin(playerArray[secondPlayer].getUserName());
 							lobby.addLoss(playerArray[startingPlayer].getUserName());
 						} else {
-
+							System.out.println("---second player won round but not game---");
 							sendList.get(secondPlayer).println("WON ROUND");
 							sendList.get(secondPlayer).flush();
 							sendList.get(startingPlayer).println("LOST ROUND");
@@ -292,6 +303,7 @@ public class GameServer implements Runnable {
 						}
 						break;
 					}
+					System.out.println("---sending begin to starting player---");
 					sendList.get(startingPlayer).println("BEGIN");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
@@ -349,7 +361,7 @@ public class GameServer implements Runnable {
 	}
 
 	private boolean checkForWin(int player) { // player är antingen 0 eller 1, 0
-												// så kollar man player 1, 2 så
+												// så kollar man player 1, 1 så
 												// kollar man player 2
 
 		// matchar varje siffra mot
