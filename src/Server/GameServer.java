@@ -226,6 +226,8 @@ public class GameServer implements Runnable {
 							System.out.println("---starting player won round but not game---");
 							startingPlayerWon = true;
 							fillBoard();
+							player1Marks.clear();
+							player2Marks.clear();
 							sendList.get(startingPlayer).println("WON ROUND");
 							sendList.get(startingPlayer).flush();
 							sendList.get(secondPlayer).println("LOST ROUND");
@@ -303,6 +305,8 @@ public class GameServer implements Runnable {
 						} else {
 							System.out.println("---second player won round but not game---");
 							fillBoard();
+							player1Marks.clear();
+							player2Marks.clear();
 							sendList.get(secondPlayer).println("WON ROUND");
 							sendList.get(secondPlayer).flush();
 							sendList.get(startingPlayer).println("LOST ROUND");
