@@ -233,6 +233,7 @@ public class GameServer implements Runnable {
 					}
 					System.out.println("---second player loop---");
 					sendList.get(secondPlayer).println("BEGIN");
+					sendList.get(secondPlayer).flush();
 					secondPlayerLoop:
 					while ((response = receiveList.get(secondPlayer).readLine()) != null) {
 						// osäker på om den fortsätter till else, annars får jag
@@ -306,6 +307,7 @@ public class GameServer implements Runnable {
 					}
 					System.out.println("---sending begin to starting player---");
 					sendList.get(startingPlayer).println("BEGIN");
+					sendList.get(startingPlayer).flush();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
