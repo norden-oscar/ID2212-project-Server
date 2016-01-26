@@ -185,6 +185,8 @@ public class GameServer implements Runnable {
 							sendList.get(startingPlayer).flush();
 							sendList.get(secondPlayer).println(startingMarker + "|" + response);
 							sendList.get(secondPlayer).flush();
+							sendList.get(startingPlayer).println("WAIT");
+							sendList.get(startingPlayer).flush();
 							break startingPlayerLoop;
 						} else {
 							System.out.println("---starting player tile taken---");
@@ -261,6 +263,8 @@ public class GameServer implements Runnable {
 							sendList.get(secondPlayer).flush();
 							sendList.get(startingPlayer).println(secondMarker + "|" + response);
 							sendList.get(startingPlayer).flush();
+							sendList.get(secondPlayer).println("WAIT");
+							sendList.get(secondPlayer).flush();
 							break secondPlayerLoop;
 						} else {
 							System.out.println("---second player tile taken---");
