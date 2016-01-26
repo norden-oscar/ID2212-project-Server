@@ -151,6 +151,7 @@ public class GameServer implements Runnable {
 				sendList.get(startingPlayer).flush();
 				sendList.get(secondPlayer).println("WAIT");
 				sendList.get(secondPlayer).flush();
+				fillBoard();
 			}
 
 			while (keepGoing) { // loop för en omgång
