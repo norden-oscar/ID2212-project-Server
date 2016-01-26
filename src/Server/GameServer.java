@@ -225,6 +225,7 @@ public class GameServer implements Runnable {
 						} else {
 							System.out.println("---starting player won round but not game---");
 							startingPlayerWon = true;
+							fillBoard();
 							sendList.get(startingPlayer).println("WON ROUND");
 							sendList.get(startingPlayer).flush();
 							sendList.get(secondPlayer).println("LOST ROUND");
@@ -301,6 +302,7 @@ public class GameServer implements Runnable {
 							lobby.addLoss(playerArray[startingPlayer].getUserName());
 						} else {
 							System.out.println("---second player won round but not game---");
+							fillBoard();
 							sendList.get(secondPlayer).println("WON ROUND");
 							sendList.get(secondPlayer).flush();
 							sendList.get(startingPlayer).println("LOST ROUND");
@@ -379,7 +381,7 @@ public class GameServer implements Runnable {
 			for (int i = 0; i < wins.size(); i++) {
 				if (player1Marks.contains(wins.get(i).get(0)) && player1Marks.contains(wins.get(i).get(1))
 						&& player1Marks.contains(wins.get(i).get(2))) {
-					System.out.print("player 1 sequence matched against : "+wins.get(i).get(0)+wins.get(i).get(0)+wins.get(i).get(0));
+					System.out.print("player 1 sequence matched against : "+wins.get(i).get(0)+wins.get(i).get(1)+wins.get(i).get(2));
 					System.out.print("player 1 player marks contains : "+ Arrays.asList(player1Marks));
 					return true;
 				}
@@ -390,7 +392,7 @@ public class GameServer implements Runnable {
 			for (int i = 0; i < wins.size(); i++) {
 				if (player2Marks.contains(wins.get(i).get(0)) && player2Marks.contains(wins.get(i).get(1))
 						&& player2Marks.contains(wins.get(i).get(2))) {
-					System.out.print("player 2 sequence matched agains : "+wins.get(i).get(0)+wins.get(i).get(0)+wins.get(i).get(0));
+					System.out.print("player 2 sequence matched agains : "+wins.get(i).get(0)+wins.get(i).get(1)+wins.get(i).get(2));
 					System.out.print("player 2 player marks contains : "+ Arrays.asList(player2Marks));
 					return true;
 				}
