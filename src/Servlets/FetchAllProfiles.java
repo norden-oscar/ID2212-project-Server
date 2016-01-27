@@ -24,17 +24,19 @@ public class FetchAllProfiles extends HttpServlet {
 		Lobby lobby = Lobby.getLobby();
 		// TODO: send data to server
 		gameList = lobby.fetchAllGames();
+		
+				
 		// parsa ur datan vi vill ha ur denna
 		String result="";
 		for(int i =0;i<gameList.size();i++){
-			String player1,player2;
+			String player1="-",player2="-";
 			GameServer tempGame =gameList.get(i);
-			String portNumber = ""+tempGame.getPortNumber();
-			if(tempGame.getState()!=State.READY){
-				player1="-";
+			
+			if(tempGame.getState()==State.IDLE){
+				player1=tempGame.getPlayers()[0].getUserName();
 				player2 = "-";
 			}
-			else{
+			else if(tempGame.getState() == State.FULL){
 				player1 = tempGame.getPlayers()[0].getUserName();
 				player2 = tempGame.getPlayers()[1].getUserName();
 			}

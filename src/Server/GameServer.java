@@ -91,32 +91,7 @@ public class GameServer implements Runnable {
 		}
 	}
 
-	private void getPlayerInfo() {
-		String response;
-		// boolean keepGoing = true;
-		try {
-			System.out.println("--------waiting for hello Player 1-----------");
-			response = null;
-			while (response == null) {
-				response = in1.readLine();		
-			}
-			Player player1 = lobby.getPlayer(response);
-			playerArray[0] = player1;
-			System.out.println("--------waiting for hello Player 2-----------");
-			while ((response = in2.readLine()) != null) {
-				
-				Player player2 = lobby.getPlayer(response);
-				if (player2 == null) {
-					System.out.println("getPlayerInfo(): could not find user " + response);
-				}
-				playerArray[1] = player2;
-			}
-			state = State.READY;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 
 	private void playGame() {
 		int startingPlayer = rand.nextInt(2); // starting player blir 0 eller 1
@@ -206,6 +181,9 @@ public class GameServer implements Runnable {
 						sendList.get(secondPlayer).println("DRAW");
 						sendList.get(secondPlayer).flush();
 						startingPlayerWon = true;
+						fillBoard();
+						player1Marks.clear();
+						player2Marks.clear();
 						break;
 					}
 						System.out.println("---Checking round win starting player: startingplayer = "+startingPlayer+"---");
@@ -498,7 +476,7 @@ public class GameServer implements Runnable {
 		wins.add(Arrays.asList(0, 3, 6));
 		wins.add(Arrays.asList(1, 4, 7));
 		wins.add(Arrays.asList(2, 5, 8));
-		wins.add(Arrays.asList(0, 4, 7));
+		wins.add(Arrays.asList(0, 4, 8));
 		wins.add(Arrays.asList(2, 4, 6));
 		sendList.add(out1);
 		sendList.add(out2);
