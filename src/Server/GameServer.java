@@ -153,7 +153,7 @@ public class GameServer implements Runnable {
 							lobby.addLoss(playerArray[startingPlayer].getUserName());
 							break startingPlayerLoop;
 						}
-						if (positionIsFree(Integer.parseInt(response))) {
+						else if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(startingMarker, Integer.parseInt(response), startingPlayer);
 							System.out.println("---Starting player put "+startingMarker + " on tile: "+ response+"---" );
 							sendList.get(startingPlayer).println(startingMarker + "|" + response); // "X|position
@@ -237,7 +237,7 @@ public class GameServer implements Runnable {
 							lobby.addLoss(playerArray[startingPlayer].getUserName());
 							break secondPlayerLoop;
 						}
-						if (positionIsFree(Integer.parseInt(response))) {
+						else if (positionIsFree(Integer.parseInt(response))) {
 							placeMarker(secondMarker, Integer.parseInt(response), secondPlayer);
 							System.out.println("Second player put "+secondMarker + " on tile: "+ response );
 							sendList.get(secondPlayer).println(secondMarker + "|" + response); // "X|position
